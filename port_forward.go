@@ -46,6 +46,7 @@ func main() {
 	vals.Add("local_ip", ip)
 	fmt.Fprintf(os.Stderr, "client_id: %s\n", hash)
 	fmt.Fprintf(os.Stderr, "IP found: %s\n", ip)
+	fmt.Println(vals.Encode())
 	res, err := http.PostForm("https://www.privateinternetaccess.com/vpninfo/port_forward_assignment", vals)
 
 	if err != nil {
